@@ -1,0 +1,675 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --font:#E5E5E5;
+    --white:#FFFFFF;
+    --dark-blue:#0A3871;
+    --greey:#C5C5C5;
+    --medium-gray:#67808E;
+    --gray:#343A40;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+}
+
+::selection{
+    background: var(--dark-blue);
+    color: var(--white);
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2; /* Asegura que el video esté detrás del contenido */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad aquí (0 es completamente transparente, 1 es completamente opaco) */
+  z-index: -1; /* Coloca la capa encima del video pero detrás del contenido */
+}
+
+img {
+    max-width: 100%;
+}
+
+header {
+    position: absolute;
+    margin: 40px 0px 0px 40px;
+}
+
+header .logo {
+    display: flex;
+    align-items: flex-start;
+    width: 120px;
+    height: 48px;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    background-size: cover;
+    background-position: center;
+}
+
+.contenedor__encriptador {
+  width: 60%;
+  margin: 168px 0px 0px 140px;
+  background: transparent;
+}
+
+.caja__encriptador {
+  width: 660px;
+  height: 268px;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  outline: none;
+  border: 3px solid #0F0; /* Verde brillante típico de las pantallas CRT */
+  border-radius: 10px;
+  resize: none;
+  background: #000; /* Fondo negro para simular una pantalla */
+  color: #FFF; /* Texto blanco para simular una pantalla de computadora antigua */
+  box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.8), 0 0 10px rgba(0, 255, 0, 0.5); /* Efecto de brillo de pantalla CRT */
+  font-family: 'Courier New', Courier, monospace; /* Fuente de estilo retro */
+  padding: 20px;
+  text-shadow: 0 0 5px #0F0; /* Sombra de texto verde para mayor efecto */
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0, 255, 0, 0.2) 1px, rgba(0, 255, 0, 0.2) 2px); /* Líneas horizontales como en una pantalla CRT */
+}
+
+.caja__encriptador::placeholder {
+    color: #FFF; /* Texto blanco para el texto del placeholder */
+}
+
+.caja__encriptador:focus {
+    color: #FFF; /* Asegura que el texto siga siendo blanco al enfocar */
+}
+
+
+.msj__aviso {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 8px;
+    position: absolute;
+    top: 500px;
+}
+
+.msj__aviso__texto__izq {
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    opacity: 0.8;
+    color: var(--white);
+}
+
+.encriptador__botones {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8px;
+    position: absolute;
+    top: 526px;
+}
+
+
+.contenedor__resultado {
+  width: 270px;
+  height: 580px;
+  background: var(--Font);
+  box-shadow: 10px 24px 32px -8px black;
+  position: relative;
+  margin-top: 40px;
+  border-radius: 32px;
+  text-align: center;
+}
+
+.caja__resultado {
+  width: 250px;
+  margin: auto;
+  margin-top: 50%;
+  background: var(--Font);
+}
+
+.img__muneco {
+  background: var(--Font);
+}
+
+.msj__uno {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: center;
+  color: var(--Gray);
+  background: var(--Font);
+}
+
+.msj__dos {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--Medium-Gray);
+  background: var(--Font);
+}
+
+.enc__des__resultado {
+  width: 100%;
+  height: 485px;
+  position: absolute;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 36px;
+  color: var(--font);
+  background: transparent;
+  border-top-right-radius: 32px;
+  border-top-left-radius: 32px;
+  border: none;
+  resize: none;
+}
+
+.enc__des__resultado:focus {
+  outline: none;
+}
+
+/* From Uiverse.io by KapeParaguay */ 
+.buttonpro {
+  --btn-default-bg: black; /* Color de fondo por defecto */
+  --btn-hover-bg: blue; /* Color de fondo al pasar el mouse */
+  --btn-shadow-color: yellow; /* Color de la sombra del botón */
+  --btn-padding: 20px 115px; /* Aumenta el padding para hacer los botones más grandes */
+  --btn-transition: 0.3s;
+  --btn-letter-spacing: 0.1rem;
+  --btn-animation-duration: 1.2s;
+  --hover-btn-color: #7241ff;
+  --default-btn-color: #fff;
+  --font-size: 20px; /* Aumenta el tamaño de la fuente */
+  --font-weight: 600;
+  --font-family: Menlo, Roboto Mono, monospace;
+  border-radius: 6em;
+  
+}
+
+.buttonpro {
+  box-sizing: border-box;
+  padding: var(--btn-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--default-btn-color);
+  font: var(--font-weight) var(--font-size) var(--font-family);
+  background: var(--btn-default-bg); /* Fondo por defecto */
+  cursor: pointer;
+  transition: var(--btn-transition);
+  overflow: hidden;
+  box-shadow: var(--btn-shadow);
+  border-radius: 6em;
+  border: 2px solid #F6E96B; /* Borde por defecto */
+}
+
+.buttonpro:hover,
+.buttonpro:focus {
+  background: var(--btn-hover-bg); /* Fondo al pasar el mouse */
+  box-shadow: 0px 0px 10px 0px rgba(119, 68, 255, 0.7);
+  border: 2px solid rgb(9, 255, 0); /* Borde al pasar el mouse */
+}
+
+.buttonpro span {
+  letter-spacing: var(--btn-letter-spacing);
+  transition: var(--btn-transition);
+  box-sizing: border-box;
+  position: relative;
+  background: inherit;
+}
+
+.buttonpro span::before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  background: inherit;
+}
+
+.buttonpro:focus {
+  scale: 1.09;
+}
+
+.buttonpro:hover span,
+.buttonpro:focus span {
+  color: rgb(232, 240, 231);
+}
+
+.buttonpro:hover span::before,
+.buttonpro:focus span::before {
+  animation: chitchat linear both var(--btn-animation-duration);
+}
+
+@keyframes chitchat {
+  0% {
+    content: "#";
+  }
+
+  5% {
+    content: ".";
+  }
+
+  10% {
+    content: "^{";
+  }
+
+  15% {
+    content: "-!";
+  }
+
+  20% {
+    content: "#$_";
+  }
+
+  25% {
+    content: "№:0";
+  }
+
+  30% {
+    content: "#{+.";
+  }
+
+  35% {
+    content: "@}-?";
+  }
+
+  40% {
+    content: "?{4@%";
+  }
+
+  45% {
+    content: "=.,^!";
+  }
+
+  50% {
+    content: "?2@%";
+  }
+
+  55% {
+    content: "\;1}]";
+  }
+
+  60% {
+    content: "?{%:%";
+    right: 0;
+  }
+
+  65% {
+    content: "|{f[4";
+    right: 0;
+  }
+
+  70% {
+    content: "{4%0%";
+    right: 0;
+  }
+
+  75% {
+    content: "'1_0<";
+    right: 0;
+  }
+
+  80% {
+    content: "{0%";
+    right: 0;
+  }
+
+  85% {
+    content: "]>'";
+    right: 0;
+  }
+
+  90% {
+    content: "4";
+    right: 0;
+  }
+
+  95% {
+    content: "2";
+    right: 0;
+  }
+
+  100% {
+    content: "";
+    right: 0;
+  }
+}
+
+/* From Uiverse.io by vinodjangid07 */ 
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13rem;
+  overflow: hidden;
+  height: 3rem;
+  background-size: 300% 300%;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#212121, #212121), linear-gradient(137.48deg, #ffdb3b 10%, #ff9b17d7 45%, #f9ff41 67%, #feb200d7 87%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  margin: 270px 285px 0px; 
+    position: absolute;
+  opacity: 0; 
+    pointer-events: none; 
+}
+
+
+#container-stars {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+}
+
+strong {
+  z-index: 2;
+  font-family: 'Poppins' sans-serif;
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: #FFFFFF;
+  text-shadow: 0 0 4px rgb(0, 0, 0);
+}
+
+#glow {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+.circle {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: pulse_3011 4s infinite;
+  z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+  background: rgba(0, 0, 1860 0.936);
+}
+
+.circle:nth-of-type(2) {
+  background: rgba(0, 0, 1860 0.936);
+}
+
+.btn:hover #container-stars {
+  z-index: 1;
+  background-color: #212121;
+}
+
+.btn:hover {
+  transform: scale(1.1)
+}
+
+.btn:active {
+  border: double 4px #FE53BB;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+.btn:active .circle {
+  background: #FE53BB;
+}
+
+#stars {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+#stars::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+#stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-135rem);
+  }
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+
+
+footer {
+  margin-top: 6.3rem;
+  padding: 4px 5px 0px; /* Ajuste de padding para reducir el ancho vertical */
+  border-top: 2px solid var(--Font);
+  color: var(--gray);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #212121;
+  background-color: orange;
+  display: flex; /* Usar flexbox para alineación */
+  align-items: center; /* Alinea verticalmente los elementos */
+  justify-content: center;
+}
+
+.footer__credits {
+  margin: 2px; /* Ajusta el valor según el espacio que desees */
+  text-align: center;
+}
+
+.footer__credits {
+  font-size: 12px; /* Tamaño más pequeño que el texto principal */
+  color: #212121;
+  margin-top: 4px;
+  text-align: center;
+}
+
+
+
+
+@media(max-width: 1250px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .contenedor__encriptador {
+    margin: 35px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    }
+
+    .encriptador__botones {
+      display: flex;
+      align-items: center;
+      position: inherit;
+    }
+
+    .msj__aviso {
+      position: inherit;
+      margin: 15px;
+    }
+
+    .contenedor__resultado {
+      width: 665px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+
+    .caja__resultado {
+      display: block;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: absolute;
+      bottom: 20%;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .img__muneco {
+      display: none;
+    }
+
+    .btn {
+      margin-bottom: -60px;
+      width: 40%;
+    }
+
+    .enc__des__resultado {
+      width: 100%;
+      height: 210px;
+    }
+
+  }
+
+  @media(max-width: 900px) {
+    header .logo{
+      width: 100%;
+      padding: 2px;
+      margin-left: -40px;
+    }
+
+   
+
+    .caja__encriptador, .contenedor__encriptador {
+      width: 80%;
+      font-size: 24px;
+    }
+
+    .encriptador__botones {
+      display: grid;
+      gap: 21px;
+    }
+
+    .contenedor__resultado {
+      width: 80%;
+      height: 210px;
+    }
+
+    .footer__contacto {
+      font-size: 17px;
+    }
+
+  }
+

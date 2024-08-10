@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="imagen/icono" href="./assets/oracle.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Encriptador de Texto</title>
+</head>
+<body>
+    <!-- Fondo de video -->
+    <video autoplay muted loop id="background-video">
+        <source src="./assets/encripta.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+
+    <!--Encabezado-->
+    <header>
+        <img src="./assets/logo.png" alt="Logo de Alura" class="logo">
+    </header>
+    
+    <!--Seccion Principal-->
+    <main>
+        <section class="contenedor__encriptador">
+            <textarea class="caja__encriptador" placeholder="Ingresa el texto aquí"></textarea>
+            <div class="msj__aviso">
+                <img src="./assets/advertencia.png" alt="Imagen de Aviso" class="img__aviso">
+                <p class="msj__aviso__texto__izq">Solo letras minúsculas y sin acentos</p>
+            </div>
+            <div class="encriptador__botones">
+                <button type="button" class="buttonpro btn__encriptar"><span>Encriptar</span></button>
+                <button type="button" class="buttonpro btn__desencriptar"><span>Desencriptar</span></button>
+            </div>
+        </section>
+
+        <section class="contenedor__resultado">
+            <div class="caja__resultado">
+                <img src="./assets/muneco.png" alt="Imagen Muneco" class="img__muneco">
+                <p class="msj__uno">Ningún mensaje fue encontrado</p>
+                <p class="msj__dos">Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+            <textarea type="mensaje" class="enc__des__resultado" readonly></textarea>
+            <button type="button" class="btn">
+                <strong>Copiar</strong>
+                <div id="container-stars">
+                  <div id="stars"></div>
+                </div>
+            
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                  </div>
+              </button>
+                
+          </section>
+      </main>
+
+ <!--Footer-->   
+ <footer>
+    <p class="footer__contacto">&copy; 2024 Desarrolado by MarioDev0596</p> 
+    <a class="logo__github" href="https://github.com/MarioDev0596" target="_blank">
+        <img src="./assets/1github.svg" alt="GitHub">
+    </a>
+    <p class="footer__credits">Button Design © 2024 StealthWorm, DrashtySoni, Galahhad (Galahad), KapeParaguay (Fabrizio)
+        - Vídeo de fondo de <a href="https://pixabay.com/es/users/juliush-3921568/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=115238" target="_blank">Julius H.</a> en <a href="https://pixabay.com/es/" target="_blank">Pixabay</a>
+    </a>
+
+    </p>
+    
+</footer>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
+
