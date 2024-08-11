@@ -673,3 +673,133 @@ footer {
 
   }
 
+  /* Estilos específicos para pantallas de 480px o menos */
+@media(max-width: 480px) {
+  header .logo {
+      width: 60%;
+      padding: 2px;
+      margin-left: -40px;
+  }
+
+  .msj__aviso__texto__izq {
+      font-size: 0.75rem;
+  }
+
+  .caja__encriptador, .contenedor__encriptador {
+      width: 75%;
+      font-size: 1.5rem;
+  }
+
+  .caja__encriptador {
+    height: 13rem;
+    width: 280px;
+  }
+
+  .contenedor__resultado {
+    width: 80%;
+    height: 12.5rem;
+}
+
+  .enc__des__resultado {
+      font-size: 1.5rem;
+  }
+
+  .encriptador__botones {
+      display: grid;
+      gap: 15px;
+  }
+
+  .encriptador__botones button {
+      font-size: 1rem; /* Tamaño de fuente reducido */
+      padding: 15px 100px; /* Menor padding para botones más pequeños */
+      width: 80px; /* Ajusta el ancho del botón */
+  }
+
+  .btn {
+      font-size: 1rem;
+  }
+
+
+  footer {
+      font-size: 0.5rem;
+      margin-top: 13rem; /* Asegura que el footer se mueva hacia abajo */
+  }
+
+  footer p.footer__contacto {
+        font-size: 0.8rem; 
+  }
+
+  footer .footer__credits {
+      font-size: 0.7rem;
+  }
+}
+
+  /* Estilos específicos para pantallas de 480px o menos */
+  @media(max-width: 320px) {
+    header .logo {
+        width: 35%;
+        padding: 1px;
+        margin-top: -35px;
+    }
+
+    .msj__aviso__texto__izq {
+        font-size: 0.75rem;
+    }
+  
+    .caja__encriptador, .contenedor__encriptador {
+        width: 75%;
+        font-size: 1.5rem;
+    }
+  
+    .caja__encriptador {
+      width: 230px;
+      height: 15rem;
+    }
+  
+    .contenedor__resultado {
+      width: 230px;
+      height: 15rem;
+  }
+  
+    .enc__des__resultado {
+        font-size: 1.5rem;
+    }
+  
+    .encriptador__botones {
+        display: grid;
+        gap: 15px;
+    }
+  
+    .encriptador__botones button {
+        font-size: 1rem; /* Tamaño de fuente reducido */
+        padding: 15px 100px; /* Menor padding para botones más pequeños */
+        width: 80px; /* Ajusta el ancho del botón */
+    }
+  
+    .btn {
+        font-size: 1rem;
+    }
+  
+  
+    footer {
+        font-size: 0.5rem;
+        margin-top: 6.5rem; /* Asegura que el footer se mueva hacia abajo */
+    }
+  
+    footer p.footer__contacto {
+          font-size: 0.8rem; 
+    }
+  
+    footer .footer__credits {
+        font-size: 0.7rem;
+    }
+  }
+  
+
+  
+    
+       
+    
+
+  
+  
